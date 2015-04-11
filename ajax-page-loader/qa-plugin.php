@@ -3,6 +3,7 @@
 	Plugin Name: Ajax Page Loader
 	Plugin URI: http://TowhidN.com
 	Plugin Description: Loads Q2A pages using Ajax Technology to provide faster & modern pageload
+	Plugin Update Check URI: https://raw.githubusercontent.com/Towhidn/Ajax-Page-Loader/master/ajax-page-loader/qa-plugin.php
 	Plugin Version: 1.0.0
 	Plugin Date: 
 	Plugin Author: QA-Themes.com
