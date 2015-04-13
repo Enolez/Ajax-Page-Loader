@@ -27,7 +27,7 @@ class qa_html_theme_layer extends qa_html_theme_base
 		if(empty($container))
 			$container = '.qa-body-wrapper';
 			
-        $this->output('<script> apl_url = "' . $plugin_url . '"; apl_container = "'. $container .'";</script>');
+        $this->output('<script> apl_url = "' . $plugin_url . '"; apl_container = "'. $container .'"; apl_home_url = "'. qa_opt('site_url') .'";</script>');
 
 		qa_html_theme_base::head_script();
         
