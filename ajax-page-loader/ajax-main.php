@@ -23,7 +23,10 @@
 	require_once QA_INCLUDE_DIR.'qa-app-format.php';
 	require_once QA_INCLUDE_DIR.'qa-app-options.php';
 
-	require_once 'ajax-pages.php';
+	if(version_compare(QA_VERSION, '1.7.0', ">="))
+		require_once 'ajax-pages17.php';
+	else
+		require_once 'ajax-pages16.php';
 
 
 	
@@ -39,11 +42,11 @@
 	qa_page_queue_pending();
 	$qa_content = qa_get_request_content();	
 
-	
 	global $qa_template;
 	$tmpl = substr($qa_template, 0, 7) == 'custom-' ? 'custom' : $qa_template;
 	$themeclass = qa_load_theme_class(qa_get_site_theme(), $tmpl, $qa_content, qa_request());
-	$themeclass->initialize();
+	// I'm too tired to check why this call didn't work for some instances :(
+	//$themeclass->initialize();
 
 	$themeclass->main();
 	$themeclass->sidepanel();
